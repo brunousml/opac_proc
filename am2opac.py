@@ -633,10 +633,10 @@ def run(options, pool):
 
     logger.info(u'Coleção alvo: %s', options.collection)
     logger.debug(u'Articles Meta API: %s, at port: %s', config.ARTICLE_META_THRIFT_DOMAIN, config.ARTICLE_META_THRIFT_PORT)
-    if config.MONGODB_USER and config.MONGODB_PASS:
-        logger.debug(u'Conexão e credenciais do banco: mongo://{username}:{password}@{host}:{port}/{db}'.format(**config.MONGODB_SETTINGS))
+    if config.OPAC_PROC_MONGODB_USER and config.OPAC_PROC_MONGODB_PASS:
+        logger.debug(u'Conexão e credenciais do banco: mongo://{username}:{password}@{host}:{port}/{db}'.format(**config.OPAC_PROC_MONGODB_SETTINGS))
     else:
-        logger.debug(u'Conexão sem credenciais do banco: mongo://{host}:{port}/{db}'.format(**config.MONGODB_SETTINGS))
+        logger.debug(u'Conexão sem credenciais do banco: mongo://{host}:{port}/{db}'.format(**config.OPAC_PROC_MONGODB_SETTINGS))
 
     logger.debug(u'Nível do log: %s', options.logging_level)
     logger.debug(u'Arquivo de log: %s', options.logging_file)
